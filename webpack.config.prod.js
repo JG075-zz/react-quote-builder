@@ -31,7 +31,12 @@ module.exports = {
     {
       test: /\.js$/,
       loaders: ['babel'],
-      include: path.join(__dirname, 'client')
+      exclude: /(node_modules|bower_components)/,
+      include: path.join(__dirname, 'client'),
+      query: {
+        plugins: [['react-transform', {...}]],
+        presets: ['react', 'es2015', 'stage-0'],
+      },
     },
     // CSS
     {

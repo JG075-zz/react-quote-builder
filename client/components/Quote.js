@@ -3,14 +3,20 @@ import QuoteItems from './QuoteItems';
 import Total from './Total';
 
 const Quote = React.createClass({
+  
   render() {
     return (
       <div className="quote">
         <h2>Update quote</h2>
-        <span className="cancel">Cancel quote</span>
+        { this.props.editMode ?
+          <a href="#" className="cancel" onClick={this.confirmDelete}>Cancel quote</a>
+          : <a href="#" className="amend"
+                onClick={this.props.switchEditMode.bind(null, true)}>Amend quote</a>
+        }
         <QuoteItems {...this.props} />
         <Total />
-        <span>Discard Changes</span>
+        <a href="#" className="discard"
+          onClick={this.props.switchEditMode.bind(null, false)}>Discard Changes</a>
         <button>Update</button>
       </div>
     );

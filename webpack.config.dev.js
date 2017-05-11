@@ -12,6 +12,11 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/static/'
   },
+  externals: {
+    'cheerio': 'window',
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': true,
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
