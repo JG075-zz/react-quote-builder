@@ -7,7 +7,13 @@ const { JSDOM } = jsdom;
 
 var exposedProperties = ['window', 'navigator', 'document'];
 
-const { document } = (new JSDOM(`...`)).window;
+const dom = new JSDOM(`...`, {
+  beforeParse(window) {
+    window.confirm = window.console.log.bind(window.console);
+  }
+});
+
+const { document } = dom.window;
 
 global.window = document.defaultView;
 

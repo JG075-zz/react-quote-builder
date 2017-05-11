@@ -4,3 +4,9 @@ export function switchEditMode(status) {
     status
   };
 }
+
+export function cancelQuote() {
+  return {
+    type: 'CANCEL_QUOTE',
+  };
+}

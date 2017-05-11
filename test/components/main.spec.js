@@ -2,8 +2,8 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 import {expect} from 'chai';
 
-import Main from '../client/components/Main';
-import Quote from '../client/components/Quote';
+import Main from '../../client/components/Main';
+import Quote from '../../client/components/Quote';
 
 describe('<Main>', function () {
 
@@ -16,5 +16,5 @@ describe('<Main>', function () {
     const wrapper = shallow(<Main/>);
     expect(wrapper.find(Quote)).to.have.length(1);
   });
-  
+
 });

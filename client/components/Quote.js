@@ -3,7 +3,12 @@ import QuoteItems from './QuoteItems';
 import Total from './Total';
 
 const Quote = React.createClass({
-  
+
+  confirmDelete() {
+    const confirmResult = confirm("Are you sure you want to cancel?");
+    if (confirmResult) this.props.cancelQuote();
+  },
+
   render() {
     return (
       <div className="quote">
