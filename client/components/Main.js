@@ -8,7 +8,7 @@ const Main = React.createClass({
         <h1>
           Quote Builder
         </h1>
-        <Quote />
+        <Quote {...this.props} />
       </div>
     );
   }

@@ -1,10 +1,17 @@
 import React from 'react';
+import QuoteItems from './QuoteItems';
+import Total from './Total';
 
 const Quote = React.createClass({
   render() {
     return (
       <div className="quote">
-        <p>this is the quote builder</p>
+        <h2>Update quote</h2>
+        <span>Cancel quote</span>
+        <QuoteItems {...this.props} />
+        <Total />
+        <span>Discard Changes</span>
+        <button>Update</button>
       </div>
     );
   }
