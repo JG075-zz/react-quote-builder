@@ -4,9 +4,9 @@ import {expect} from 'chai';
 
 import editMode from '../../client/reducers/editMode';
 
-describe('editMode', function () {
+describe('editMode', function() {
 
-  it('should return action.status when action.type is \'SWITCH_EDIT_MODE\'', function () {
+  it('should return action.status when action.type is \'SWITCH_EDIT_MODE\'', function() {
     const action = {
       type: 'SWITCH_EDIT_MODE',
       status: true
@@ -22,6 +22,15 @@ describe('editMode', function () {
     };
     const result = editMode(null, action);
     expect(result).to.eql(null);
+  });
+
+  it('should return false when action.type is \'CANCEL_QUOTE\'', function() {
+    const action = {
+      type: 'CANCEL_QUOTE',
+      status: true
+    };
+    const result = editMode(null, action);
+    expect(result).to.eql(false);
   });
 
 });
