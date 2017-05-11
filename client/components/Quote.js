@@ -7,7 +7,7 @@ const Quote = React.createClass({
     return (
       <div className="quote">
         <h2>Update quote</h2>
-        <span>Cancel quote</span>
+        <span className="cancel">Cancel quote</span>
         <QuoteItems {...this.props} />
         <Total />
         <span>Discard Changes</span>

@@ -4,7 +4,7 @@ import Item from './item';
 const QuoteItems = React.createClass({
   render() {
     return (
-      <div>
+      <div className="quote-items">
         <ul>
           {this.props.items.map((item, i) => <Item {...this.props} key={i} i={i} item={item} />)}
         </ul>
