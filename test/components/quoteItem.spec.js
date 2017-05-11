@@ -5,9 +5,9 @@ import {expect} from 'chai';
 import QuoteItems from '../../client/components/QuoteItems';
 import Item from '../../client/components/Item';
 
-describe('<QuoteItems>', function () {
+describe('<QuoteItems>', function() {
 
-  it('should have a wrapping div', function () {
+  it('should have a wrapping div', function() {
     const wrapper = shallow(<QuoteItems items = {[]}/>);
     expect(wrapper.find('div')).to.have.length(1);
   });

@@ -14,7 +14,7 @@ let mockProps = {
   editMode: false
 };
 
-describe('<Quote>', function () {
+describe('<Quote>', function() {
 
   let wrapper;
 
@@ -24,12 +24,12 @@ describe('<Quote>', function () {
 
   describe('Amend quote', function() {
 
-    it('should have an \'Amend quote\' element that calls switchEditMode() with true', function () {
+    it('should have an \'Amend quote\' element that calls switchEditMode() with true', function() {
       wrapper.find('.amend').simulate('click');
       expect(mockProps.switchEditMode.calledWith(true)).to.true;
     });
 
-    it('should not be displayed when editMode is set to true', function () {
+    it('should not be displayed when editMode is set to true', function() {
       mockProps.editMode = true;
       wrapper = mount(<Quote {...mockProps} />);
       expect(wrapper.find('.amend')).to.have.length(0);;

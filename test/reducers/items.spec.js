@@ -4,7 +4,7 @@ import {expect} from 'chai';
 
 import items from '../../client/reducers/items';
 
-describe('items', function () {
+describe('items', function() {
 
   const mockData = [
     {name: "Vodka"},
@@ -15,7 +15,7 @@ describe('items', function () {
     type: 'CANCEL_QUOTE',
   };
 
-  it('should delete every item when action.type is \'CANCEL_QUOTE\'', function () {
+  it('should delete every item when action.type is \'CANCEL_QUOTE\'', function() {
     const result = items(mockData, action);
     expect(result).to.have.length(0);
   });

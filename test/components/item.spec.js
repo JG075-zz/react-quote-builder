@@ -4,7 +4,7 @@ import {expect} from 'chai';
 
 import Item from '../../client/components/Item';
 
-describe('<Item>', function () {
+describe('<Item>', function() {
 
   let wrapper;
 
@@ -16,13 +16,16 @@ describe('<Item>', function () {
     }}/>);
   })
 
-  it('should display the item prop\'s name', function () {
+  it('should display the item prop\'s name', function() {
     expect(wrapper.find(".item-name").text()).to.eql('Lemon');
   });
 
-  it('should display the item prop\'s name', function () {
+  it('should display the item prop\'s price', function() {
     expect(wrapper.find(".item-price").text()).to.eql('£345.60');
   });
 
+  it('should display an edit link when editMode is true', function() {
+
+  })
 
 });
