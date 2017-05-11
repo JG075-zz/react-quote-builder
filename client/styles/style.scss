@@ -13,10 +13,13 @@ body {
   font-size: 20px;
 }
 
-
 .item {
-  .edit-item {
+  .edit-item, .save-item, .delete-item {
     float: right;
+  }
+
+  .delete-item {
+    margin-left: 5px;
   }
 
   .item-price {

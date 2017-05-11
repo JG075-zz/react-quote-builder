@@ -17,3 +17,10 @@ export function toggleEdit(i) {
     i
   };
 }
+
+export function deleteItem(i) {
+  return {
+    type: 'DELETE_ITEM',
+    i
+  };
+}

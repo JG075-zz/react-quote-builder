@@ -12,7 +12,8 @@ let mockProps = {
     amount: "345.60",
     toggleEdit: false
   },
-  toggleEdit: sinon.stub()
+  toggleEdit: sinon.stub(),
+  deleteItem: sinon.stub()
 };
 
 describe('<Item>', function() {
@@ -21,7 +22,7 @@ describe('<Item>', function() {
 
   beforeEach(function() {
     wrapper = shallow(<Item {...mockProps} editMode={true}/>);
-  })
+  });
 
   it('should display the item prop\'s name', function() {
     expect(wrapper.find(".item-name").text()).to.eql('Lemon');
@@ -43,9 +44,16 @@ describe('<Item>', function() {
   it('should show an input two input boxes when \'edit\' link is clicked', function() {
     mockProps.item.toggleEdit = true;
     wrapper = shallow(<Item {...mockProps} editMode={true}/>);
-    expect(wrapper.find("input")).to.have.length(2)
+    expect(wrapper.find("input")).to.have.length(2);
   });
 
-  it("should change the edit link to save link")
+  it("should change the edit link to save link", function() {
+    expect(wrapper.find(".save-item")).to.have.length(1);
+    expect(wrapper.find(".edit-item")).to.have.length(0);
+  });
+
+  it("should show the delete link", function() {
+    expect(wrapper.find(".delete-item")).to.have.length(1);
+  });
 
 });

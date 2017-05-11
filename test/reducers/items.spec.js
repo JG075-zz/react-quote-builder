@@ -17,8 +17,13 @@ describe('items', function() {
   });
 
   it('should modify \'toggleEdit\' on item to be edited', function() {
-    const result = items(mockData, {type: 'TOGGLE_EDIT_ITEM', i:1});
+    const result = items(mockData, {type: 'TOGGLE_EDIT_ITEM', i: 1});
     expect(result[1].toggleEdit).to.be.true;
+  });
+
+  it('should delete an item when action.type is \'DELETE_ITEM\'', function() {
+    const result = items(mockData, {type: 'DELETE_ITEM', i: 2});
+    expect(result).to.have.length(2);
   });
 
 });
