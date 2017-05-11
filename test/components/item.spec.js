@@ -1,19 +1,26 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import {expect} from 'chai';
+import sinon from 'sinon';
 
 import Item from '../../client/components/Item';
+
+let mockProps = {
+  item: {
+    name: "Lemon",
+    currency: "£",
+    amount: "345.60",
+    toggleEdit: false
+  },
+  toggleEdit: sinon.stub()
+};
 
 describe('<Item>', function() {
 
   let wrapper;
 
   beforeEach(function() {
-    wrapper = shallow(<Item item={{
-      name: "Lemon",
-      currency: "£",
-      amount: "345.60"
-    }}/>);
+    wrapper = shallow(<Item {...mockProps} editMode={true}/>);
   })
 
   it('should display the item prop\'s name', function() {
@@ -25,7 +32,20 @@ describe('<Item>', function() {
   });
 
   it('should display an edit link when editMode is true', function() {
+    expect(wrapper.find(".edit-item")).to.have.length(1);
+  });
 
-  })
+  it('should not display an edit link when editMode is false', function() {
+    wrapper = shallow(<Item {...mockProps} editMode={false}/>);
+    expect(wrapper.find(".edit-item")).to.have.length(0);
+  });
+
+  it('should show an input two input boxes when \'edit\' link is clicked', function() {
+    mockProps.item.toggleEdit = true;
+    wrapper = shallow(<Item {...mockProps} editMode={true}/>);
+    expect(wrapper.find("input")).to.have.length(2)
+  });
+
+  it("should change the edit link to save link")
 
 });

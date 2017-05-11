@@ -13,6 +13,14 @@ body {
   font-size: 20px;
 }
 
-.item-price {
-  float: right;
+
+.item {
+  .edit-item {
+    float: right;
+  }
+
+  .item-price {
+    float: right;
+    margin-right: 10px;
+  }
 }

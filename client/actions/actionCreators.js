@@ -10,3 +10,10 @@ export function cancelQuote() {
     type: 'CANCEL_QUOTE',
   };
 }
+
+export function toggleEdit(i) {
+  return {
+    type: 'TOGGLE_EDIT_ITEM',
+    i
+  };
+}
