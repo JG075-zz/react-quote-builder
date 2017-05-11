@@ -89,6 +89,7 @@ typings/
 .env
 
 # Other
+data/
 .babelrc
 .jshintrc
 
