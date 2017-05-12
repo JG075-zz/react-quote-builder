@@ -1,16 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i');
+
 body {
   background-color: #f9f9f9;
   padding-top: 200px;
+  font-family: 'PT Sans', sans-serif;
+
+  a {
+    color: #40b6f3;
+    text-decoration: none;
+  }
 }
 
 .quote {
   background-color: #fff;
-  width: 35%;
+  width: 700px;
   margin-left: auto;
   margin-right: auto;
-  padding: 10px;
+  padding: 20px;
   border: 1px solid #e2e7e8;
   font-size: 20px;
+
+  h2 {
+    float: left;
+    margin-top: 10px;
+    font-size: 28px;
+  }
+
+  .cancel, .amend {
+    float: right;
+    margin-top: 15px;
+  }
+
+  .cancel {
+    color: #e9603d;
+  }
+
+}
+
+.quote-items {
+  clear: left;
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      width: 100%;
+      display: block;
+      clear: both;
+      padding: 10px 0;
+      border-bottom: 2px solid #f2f2f2;
+      overflow: hidden;
+
+      .item-price {
+        margin-right: 10px;
+      }
+    }
+
+    li:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.total-section {
+  margin-top: 5px;
+  border-top: 2px solid #e2e7e8;
+  padding-top: 15px;
 }
 
 .item {
@@ -18,5 +74,82 @@ body {
     float: left;
     width: 100%;
     clear: both;
+  }
+}
+
+.disclaimer {
+  clear: both;
+  text-align: center;
+  line-height: 4px;
+  font-size: 16px;
+}
+
+.total-ex-vat, .vat, .total-incl-vat {
+  clear: both;
+
+  strong {
+    float: left;
+  }
+
+  p {
+    float: right;
+  }
+}
+
+.quote-buttons {
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+
+  a {
+    font-size: 18px;
+    color: #868590;
+    font-weight: bold;
+    margin-right: 20px;
+  }
+
+  button {
+    background: #00a5ef;
+    width: 150px;
+    color: #fff;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.item-form {
+  input[type="text"] {
+    height: 30px;
+    border-radius: 2px;
+    box-shadow: none;
+    border: 1px solid #dad4d4;
+    width: 270px;
+    font-size: 20px;
+  }
+
+  .save-item, .delete-item {
+    box-sizing: border-box;
+  }
+
+  .save-item {
+    height: 35px;
+    border: 1px solid #d2d2d2;
+    border-radius: 5px;
+    width: 60px;
+    background: #fff;
+    cursor: pointer;
+  }
+
+  .delete-item {
+    height: 35px;
+    border: 1px solid #d2d2d2;
+    border-radius: 5px;
+    width: 30px;
+    background: #fff;
+    cursor: pointer;
+    margin-left: 10px;
   }
 }

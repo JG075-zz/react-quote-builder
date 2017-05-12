@@ -34,11 +34,11 @@ const Item = React.createClass({
       <li className="item">
         <form ref="itemForm" className="item-form" onSubmit={this.handleSubmit}>
           <div style={{float: "left"}}>
-            <input type="text" key={items[i].name} defaultValue={items[i].name} ref="name" className="item-name"/>
+            <input type="text" key={items[i].name} defaultValue={items[i].name} ref="name" className="item-name" required/>
           </div>
           <div style={{float: "right"}}>
-            <input type="text" key={items[i].amount} defaultValue={items[i].amount} ref="amount" className="item-price"/>
-            <input type="submit" className="save-item" value="save" />
+            <input type="text" key={items[i].amount} defaultValue={items[i].amount} ref="amount" className="item-price" required/>
+            <button type="submit" className="save-item">save</button>
             <button type="button" className="delete-item" href="#" onClick={deleteItem.bind(null, i)}>&times;</button>
           </div>
         </form>

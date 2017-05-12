@@ -18,7 +18,7 @@ const Total = React.createClass({
   render() {
     const totals = this.getTotals();
     return (
-      <div>
+      <div className="total-section">
         <div>
           <div className="total-ex-vat">
             <strong>Total quote (excl. VAT)</strong>
@@ -33,7 +33,7 @@ const Total = React.createClass({
           <strong>Total quote (incl. VAT)</strong>
           <p>{"£" + totals.total}</p>
         </div>
-        <div>
+        <div className="disclaimer">
           <p>Plentific service fee is 10% of the total quote (excl. VAT).</p>
           <p>A 20% deposit will be requested from the customer.</p>
         </div>
