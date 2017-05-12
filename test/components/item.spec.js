@@ -44,10 +44,10 @@ describe('<Item>', function() {
     expect(wrapper.find(".edit-item")).to.have.length(0);
   });
 
-  it('should show three inputs when \'edit\' link is clicked', function() {
+  it('should show two inputs when \'edit\' link is clicked', function() {
     mockProps.item.toggleEdit = true;
     wrapper = shallow(<Item {...mockProps} editMode={true}/>);
-    expect(wrapper.find("input")).to.have.length(3);
+    expect(wrapper.find("input")).to.have.length(2);
   });
 
   it("should change the edit link to save link", function() {
