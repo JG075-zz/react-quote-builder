@@ -45,3 +45,9 @@ export function addItem() {
     type: 'ADD_ITEM'
   };
 }
+
+export function updateQuote() {
+  return {
+    type: 'UPDATE_QUOTE'
+  };
+}

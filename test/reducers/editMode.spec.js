@@ -33,4 +33,13 @@ describe('editMode', function() {
     expect(result).to.eql(false);
   });
 
+  it('should return false when action.type is \'UPDATE_QUOTE\'', function() {
+    const action = {
+      type: 'UPDATE_QUOTE',
+      status: true
+    };
+    const result = editMode(null, action);
+    expect(result).to.eql(false);
+  });
+
 });

@@ -6,6 +6,10 @@ function editMode(state = false, action) {
     case 'CANCEL_QUOTE':
       // turn off edit mode
       return false;
+    case 'UPDATE_QUOTE':
+      // turn off edit mode
+      console.log("return false");
+      return false;
     default:
       // return state
       return state;
