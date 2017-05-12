@@ -6,7 +6,7 @@ const QuoteItems = React.createClass({
     return (
       <div className="quote-items">
         <ul>
-          {this.props.items.map((item, i) => <Item {...this.props} key={i} i={i} item={item} />)}
+          {this.props.items.length > 0 ? this.props.items.map((item, i) => <Item {...this.props} key={i} i={i} item={item} />) : null }
         </ul>
         {this.props.editMode ? <span href="#" className="add-quote-item link" onClick={this.props.addItem}>+ Add quote item</span> : null }
       </div>

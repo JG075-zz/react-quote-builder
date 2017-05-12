@@ -30,7 +30,7 @@ function items(state = [], action) {
         ...state.slice(i + 1)
       ];
     case 'ADD_ITEM':
-      if (!state[state.length - 1].amount) return state; // if a new item hasn't been saved
+      if (state.length > 0 && !state[state.length - 1].amount) return state; // if a new item hasn't been saved
       return [
         ...state,
         {
