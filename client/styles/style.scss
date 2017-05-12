@@ -14,16 +14,9 @@ body {
 }
 
 .item {
-  .edit-item, .save-item, .delete-item {
-    float: right;
-  }
-
-  .delete-item {
-    margin-left: 5px;
-  }
-
-  .item-price {
-    float: right;
-    margin-right: 10px;
+  .item-form {
+    float: left;
+    width: 100%;
+    clear: both;
   }
 }

@@ -9,6 +9,14 @@ const Quote = React.createClass({
     if (confirmResult) this.props.cancelQuote();
   },
 
+  checkLiveEdits() {
+    let liveEdit = false;
+    this.props.items.forEach((item) => {
+      if (item.toggleEdit) liveEdit = true;
+    })
+    if (!liveEdit) this.props.updateQuote();
+  },
+
   render() {
     return (
       <div className="quote">
@@ -23,7 +31,7 @@ const Quote = React.createClass({
         { this.props.editMode ? <div className="quote-buttons">
           <a href="#" className="discard"
             onClick={this.props.switchEditMode.bind(null, false)}>Discard Changes</a>
-          <button onClick={this.props.updateQuote}>Update</button>
+          <button onClick={this.checkLiveEdits}>Update</button>
         </div> : null }
       </div>
     );

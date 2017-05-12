@@ -8,7 +8,6 @@ function editMode(state = false, action) {
       return false;
     case 'UPDATE_QUOTE':
       // turn off edit mode
-      console.log("return false");
       return false;
     default:
       // return state

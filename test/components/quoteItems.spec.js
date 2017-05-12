@@ -41,4 +41,15 @@ describe('<QuoteItems>', function() {
     expect(wrapper.find('li')).to.have.length(1);
   });
 
+  it("should not add any more inputs after \'+ Add quote item\' is clicked", function() {
+    mockProps.addItem.returns({
+      type: 'ADD_ITEM'
+    });
+    const wrapper = mount(<QuoteItems {...mockProps}/>);
+    wrapper.find('.add-quote-item').simulate('click');
+    wrapper.find('.add-quote-item').simulate('click');
+    wrapper.find('.add-quote-item').simulate('click');
+    expect(wrapper.find('li')).to.have.length(1);
+  });
+
 });

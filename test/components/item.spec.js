@@ -6,6 +6,7 @@ import sinon from 'sinon';
 import Item from '../../client/components/Item';
 
 let mockProps = {
+  items: [{name: "Orange", price: "£4.99"}],
   item: {
     name: "Lemon",
     currency: "£",
@@ -14,7 +15,8 @@ let mockProps = {
   },
   toggleEdit: sinon.stub(),
   deleteItem: sinon.stub(),
-  saveItem: sinon.stub()
+  saveItem: sinon.stub(),
+  i: 0
 };
 
 describe('<Item>', function() {
