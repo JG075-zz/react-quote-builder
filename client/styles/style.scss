@@ -57,7 +57,7 @@ body {
       display: block;
       clear: both;
       padding: 10px 0;
-      border-bottom: 2px solid #f2f2f2;
+      border-bottom: 1px solid #ecebeb;
       overflow: hidden;
 
       .item-price {
@@ -69,10 +69,18 @@ body {
       border-bottom: none;
     }
   }
+
+  .add-quote-item {
+    margin-bottom: 30px;
+    display: block;
+    margin-top: -15px;
+    border-top: 1px solid #ecebeb;
+    padding-top: 20px;
+  }
 }
 
 .total-section {
-  margin-top: 5px;
+  margin-top: -15px;
   border-top: 2px solid #e2e7e8;
   padding-top: 15px;
 }
@@ -89,11 +97,14 @@ body {
   clear: both;
   text-align: center;
   line-height: 4px;
-  font-size: 16px;
+  font-size: 14px;
+  margin-top: -20px;
+  margin-bottom: 35px;
 }
 
 .total-ex-vat, .vat, .total-incl-vat {
   clear: both;
+  overflow: hidden;
 
   strong {
     float: left;
@@ -101,6 +112,23 @@ body {
 
   p {
     float: right;
+    margin-top: 0;
+  }
+}
+
+.vat {
+  margin-left: 20px;
+}
+
+.total-incl-vat {
+  margin-top: -5px;
+  padding-top: 10px;
+  border-top: 1px solid #f2f2f2;
+
+  p {
+    color: #00a5ef;
+    font-weight: bold;
+    font-size: 35px;
   }
 }
 
@@ -140,6 +168,11 @@ body {
 
   .save-item, .delete-item {
     box-sizing: border-box;
+    vertical-align: top;
+
+    &:focus {
+      outline: 0;
+    }
   }
 
   .save-item {
