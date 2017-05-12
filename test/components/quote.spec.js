@@ -68,18 +68,22 @@ describe('<Quote>', function() {
 
   });
 
-
-  it('should a QuoteItems component', function () {
+  it('should have a QuoteItems component', function () {
     expect(wrapper.find(QuoteItems)).to.have.length(1);
   });
 
-  it('should a Total component', function () {
+  it('should have a Total component', function () {
     expect(wrapper.find(Total)).to.have.length(1);
   });
 
   it('should have an \'Discard Changes\' quote element that calls switchEditMode() with false', function () {
+    wrapper = mount(<Quote {...mockProps} editMode={true} />);
     wrapper.find('.discard').simulate('click');
     expect(mockProps.switchEditMode.calledWith(false)).to.true;
+  });
+
+  it('should not have a \'Discard Change\' link or \'Update Button\' when editMode is false', function() {
+    expect(wrapper.find('.quote-buttons')).to.have.length(0);
   });
 
 });

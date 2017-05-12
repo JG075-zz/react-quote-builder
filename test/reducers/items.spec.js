@@ -32,4 +32,15 @@ describe('items', function() {
     expect(result[2].amount).to.eql(340);
   });
 
+  it('should return state when action.type is \'SWITCH_EDIT_MODE\' and action.status is true', function() {
+    const result = items(mockData, {type: 'SWITCH_EDIT_MODE', status: true});
+    expect(result).to.have.length(3);
+  });
+
+  it('should return the previous state when action.type is \'SWITCH_EDIT_MODE\' and action.status is false', function() {
+    items(mockData, {type: 'SWITCH_EDIT_MODE', status: true});
+    const resultqwewq = items([], {type: 'SWITCH_EDIT_MODE', status: false});
+    expect(resultqwewq).to.have.length(3);
+  });
+
 });

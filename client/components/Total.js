@@ -8,12 +8,10 @@ const Total = React.createClass({
       if (item.amount && !isNaN(item.amount)) total += parseFloat(item.amount);
     })
 
-    total = total.toFixed(2);
-
     return {
-      exVAT: total - (total * 0.2),
-      VAT: total * 0.2,
-      total
+      exVAT: (total - (total * 0.2)).toFixed(2),
+      VAT: (total * 0.2).toFixed(2),
+      total: total.toFixed(2)
     }
   },
 

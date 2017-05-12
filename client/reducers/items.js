@@ -1,7 +1,15 @@
+let savedItems = savedItems || [];
+
 function items(state = [], action) {
   const i = action.i;
 
   switch (action.type) {
+    case 'SWITCH_EDIT_MODE':
+      if (action.status) {
+        savedItems = state;
+        return state;
+      }
+      return savedItems;
     case 'CANCEL_QUOTE':
       return [];
     case 'SAVE_ITEM':

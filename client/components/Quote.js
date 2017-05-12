@@ -20,9 +20,11 @@ const Quote = React.createClass({
         }
         <QuoteItems {...this.props} />
         <Total {...this.props} />
-        <a href="#" className="discard"
-          onClick={this.props.switchEditMode.bind(null, false)}>Discard Changes</a>
-        <button>Update</button>
+        { this.props.editMode ? <div className="quote-buttons">
+          <a href="#" className="discard"
+            onClick={this.props.switchEditMode.bind(null, false)}>Discard Changes</a>
+          <button>Update</button>
+        </div> : null }
       </div>
     );
   }
