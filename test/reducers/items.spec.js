@@ -26,4 +26,10 @@ describe('items', function() {
     expect(result).to.have.length(2);
   });
 
+  it('should modify an item when action.type is \'SAVE_ITEM\'', function() {
+    const result = items(mockData, {type: 'SAVE_ITEM', i: 2, name: 'Gin', amount: 340});
+    expect(result[2].name).to.eql('Gin');
+    expect(result[2].amount).to.eql(340);
+  });
+
 });

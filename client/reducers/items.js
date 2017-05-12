@@ -3,10 +3,14 @@ function items(state = [], action) {
 
   switch (action.type) {
     case 'CANCEL_QUOTE':
-      // return an empty array
       return [];
+    case 'SAVE_ITEM':
+      return [
+        ...state.slice(0,i),
+        {...state[i], name: action.name, amount: action.amount},
+        ...state.slice(i + 1)
+      ];
     case 'TOGGLE_EDIT_ITEM':
-        // turn on toggleEdit for the item
         return [
           ...state.slice(0,i),
           {...state[i], toggleEdit: !state[i].toggleEdit},

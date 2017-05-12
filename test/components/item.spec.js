@@ -13,7 +13,8 @@ let mockProps = {
     toggleEdit: false
   },
   toggleEdit: sinon.stub(),
-  deleteItem: sinon.stub()
+  deleteItem: sinon.stub(),
+  saveItem: sinon.stub()
 };
 
 describe('<Item>', function() {
@@ -41,10 +42,10 @@ describe('<Item>', function() {
     expect(wrapper.find(".edit-item")).to.have.length(0);
   });
 
-  it('should show an input two input boxes when \'edit\' link is clicked', function() {
+  it('should show three inputs when \'edit\' link is clicked', function() {
     mockProps.item.toggleEdit = true;
     wrapper = shallow(<Item {...mockProps} editMode={true}/>);
-    expect(wrapper.find("input")).to.have.length(2);
+    expect(wrapper.find("input")).to.have.length(3);
   });
 
   it("should change the edit link to save link", function() {

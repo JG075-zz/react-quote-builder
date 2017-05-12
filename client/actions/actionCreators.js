@@ -24,3 +24,18 @@ export function deleteItem(i) {
     i
   };
 }
+
+export function saveItem(i, name, amount) {
+  return function(dispatch) {
+    dispatch({
+      type: 'SAVE_ITEM',
+      i,
+      name,
+      amount
+    });
+    dispatch({
+      type: 'TOGGLE_EDIT_ITEM',
+      i
+    });
+  };
+}
