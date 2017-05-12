@@ -8,7 +8,7 @@ const QuoteItems = React.createClass({
         <ul>
           {this.props.items.map((item, i) => <Item {...this.props} key={i} i={i} item={item} />)}
         </ul>
-        <span>+ Add quote item</span>
+        {this.props.editMode ? <a href="#" className="add-quote-item" onClick={this.props.addItem}>+ Add quote item</a> : null }
       </div>
     );
   }

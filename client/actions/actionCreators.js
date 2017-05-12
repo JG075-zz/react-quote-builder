@@ -39,3 +39,9 @@ export function saveItem(i, name, amount) {
     });
   };
 }
+
+export function addItem() {
+  return {
+    type: 'ADD_ITEM'
+  };
+}

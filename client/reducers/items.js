@@ -21,6 +21,14 @@ function items(state = [], action) {
         ...state.slice(0,i),
         ...state.slice(i + 1)
       ];
+    case 'ADD_ITEM':
+      return [
+        ...state,
+        {
+          "currency":"£",
+          "toggleEdit": true
+        }
+      ]
     default:
       return state;
   }
