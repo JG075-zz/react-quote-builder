@@ -14,4 +14,4 @@ Run `npm test` to view tests.
 
 ## Production Build
 
-Run `npm build` to create a distro folder and a bundle.js file.
+Run `npm run build` to create a distro folder and a bundle.js file.

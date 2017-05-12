@@ -4,7 +4,6 @@ var webpack = require('webpack');
 module.exports = {
   devtool: 'source-map',
   entry: [
-
     './client/quoteBuilder'
   ],
   output: {
@@ -30,19 +29,15 @@ module.exports = {
     // js
     {
       test: /\.js$/,
-      loaders: ['babel'],
+      loaders: ['babel?presets[]=es2015,presets[]=stage-0,presets[]=react,plugins[]=transform-runtime'],
       exclude: /(node_modules|bower_components)/,
       include: path.join(__dirname, 'client'),
-      query: {
-        plugins: [['react-transform', {...}]],
-        presets: ['react', 'es2015', 'stage-0'],
-      },
     },
     // CSS
     {
-      test: /\.styl$/,
+      test: /\.scss$/,
       include: path.join(__dirname, 'client'),
-      loader: 'style-loader!css-loader!stylus-loader'
+      loaders: ['style', 'css', 'sass']
     }
     ]
   }

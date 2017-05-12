@@ -2,13 +2,21 @@
 
 body {
   background-color: #f9f9f9;
-  padding-top: 200px;
+  padding-top: 20px;
   font-family: 'PT Sans', sans-serif;
 
-  a {
-    color: #40b6f3;
+  span {
     text-decoration: none;
   }
+}
+
+.link {
+  color: #40b6f3;
+}
+
+.link:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .quote {
@@ -101,7 +109,7 @@ body {
   margin-right: auto;
   width: 300px;
 
-  a {
+  span {
     font-size: 18px;
     color: #868590;
     font-weight: bold;

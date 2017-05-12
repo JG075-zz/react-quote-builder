@@ -21,7 +21,7 @@ const Item = React.createClass({
             {item.currency}
             {item.amount}
           </span>
-          {editMode &&  !item.toggleEdit ? <a className="edit-item" href="#" onClick={toggleEdit.bind(null, i)}>edit</a> : null}
+          {editMode &&  !item.toggleEdit ? <span className="edit-item link" href="#" onClick={toggleEdit.bind(null, i)}>edit</span> : null}
         </span>
       </li>
     );
