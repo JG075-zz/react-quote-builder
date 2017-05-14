@@ -21,7 +21,7 @@ body {
 
 .quote {
   background-color: #fff;
-  width: 700px;
+  width: 600px;
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
@@ -162,16 +162,33 @@ body {
     border-radius: 2px;
     box-shadow: none;
     border: 1px solid #dad4d4;
-    width: 270px;
     font-size: 20px;
+    width: 120px;
+  }
+
+  div:first-child input[type="text"] {
+    width: 220px;
   }
 
   .save-item, .delete-item {
     box-sizing: border-box;
     vertical-align: top;
 
+    &:hover {
+      background: #00a5ef;
+      color: #fff;
+      border: 1px solid #038dcc;
+    }
+
     &:focus {
       outline: 0;
+    }
+
+    &:active {
+      box-shadow: inset 0px 0px 10px #1e96cc;
+      background: #00a5ef;
+      color: #fff;
+      border: 1px solid #038dcc; 
     }
   }
 
