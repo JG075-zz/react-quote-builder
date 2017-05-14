@@ -4,7 +4,6 @@ var webpack = require('webpack');
 module.exports = {
   devtool: 'source-map',
   entry: [
-    'webpack-hot-middleware/client',
     './client/quoteBuilder'
   ],
   output: {
@@ -12,27 +11,33 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/static/'
   },
-  externals: {
-    'cheerio': 'window',
-    'react/lib/ExecutionEnvironment': true,
-    'react/lib/ReactContext': true,
-  },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': "'production'"
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compressor: {
+        warnings: false
+      }
+    })
   ],
   module: {
     loaders: [
     // js
     {
       test: /\.js$/,
-      loaders: ['babel'],
-      include: path.join(__dirname, 'client')
+      loaders: ['babel-loader?presets[]=es2015,presets[]=stage-2,presets[]=react,plugins[]=transform-runtime'],
+      exclude: /(node_modules|bower_components)/,
+      include: path.join(__dirname, 'client'),
     },
-    // css
+    // CSS
     {
-     test: /\.scss$/,
-     loaders: ['style', 'css', 'sass']
+      test: /\.scss$/,
+      include: path.join(__dirname, 'client'),
+      loaders: ['style-loader', 'css-loader', 'sass-loader']
     }
     ]
   }
