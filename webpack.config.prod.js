@@ -12,7 +12,7 @@ module.exports = {
     publicPath: '/static/'
   },
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': "'production'"
@@ -29,7 +29,7 @@ module.exports = {
     // js
     {
       test: /\.js$/,
-      loaders: ['babel?presets[]=es2015,presets[]=stage-0,presets[]=react,plugins[]=transform-runtime'],
+      loaders: ['babel-loader?presets[]=es2015,presets[]=stage-0,presets[]=react,plugins[]=transform-runtime'],
       exclude: /(node_modules|bower_components)/,
       include: path.join(__dirname, 'client'),
     },
@@ -37,7 +37,7 @@ module.exports = {
     {
       test: /\.scss$/,
       include: path.join(__dirname, 'client'),
-      loaders: ['style', 'css', 'sass']
+      loaders: ['style-loader', 'css-loader', 'sass-loader']
     }
     ]
   }
