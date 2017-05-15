@@ -1,4 +1,5 @@
 # React Quote Builder
+[![Build Status](https://travis-ci.org/JG075/react-quote-builder.svg?branch=master)](https://travis-ci.org/JG075/react-quote-builder)
 
 A simple React + Redux quote builder. See a live version [here](https://react-quote-builder.herokuapp.com).
 
