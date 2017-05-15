@@ -1,7 +1,3 @@
-require('babel-register')();
-
-process.env.NODE_ENV = 'test';
-
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
