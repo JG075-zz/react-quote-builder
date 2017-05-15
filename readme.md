@@ -1,6 +1,6 @@
 # React Quote Builder
 
-A simple React + Redux quote builder.
+A simple React + Redux quote builder. See a live version [here](https://react-quote-builder.herokuapp.com).
 
 ## Running
 
