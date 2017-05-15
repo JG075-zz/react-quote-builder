@@ -9,7 +9,7 @@ var exposedProperties = ['window', 'navigator', 'document'];
 
 const dom = new JSDOM(`...`, {
   beforeParse(window) {
-    window.confirm = window.console.log.bind(window.console);
+    window.confirm = window.console.log.bind(null, function(){});
   }
 });
 
@@ -27,5 +27,3 @@ Object.keys(document.defaultView).forEach((property) => {
 global.navigator = {
   userAgent: 'node.js'
 };
-
-documentRef = document;
