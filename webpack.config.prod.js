@@ -29,7 +29,7 @@ module.exports = {
     // js
     {
       test: /\.js$/,
-      loaders: ['babel-loader?presets[]=es2015,presets[]=stage-0,presets[]=react,plugins[]=transform-runtime'],
+      loaders: ['babel-loader?presets[]=es2015,presets[]=stage-2,presets[]=react,plugins[]=transform-runtime'],
       exclude: /(node_modules|bower_components)/,
       include: path.join(__dirname, 'client'),
     },
@@ -40,5 +40,4 @@ module.exports = {
       loaders: ['style-loader', 'css-loader', 'sass-loader']
     }
     ]
-  }
-};
+  }};
