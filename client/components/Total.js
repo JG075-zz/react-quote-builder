@@ -9,8 +9,8 @@ const Total = React.createClass({
     })
 
     return {
-      exVAT: (total - (total * 0.2)).toFixed(2),
-      VAT: (total * 0.2).toFixed(2),
+      exVAT: (total / 1.2).toFixed(2),
+      VAT: (total - (total / 1.2)).toFixed(2),
       total: total.toFixed(2)
     }
   },
